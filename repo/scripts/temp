@@ -1,0 +1,26 @@
+Log notice file /var/log/tor/notices.log
+VirtualAddrNetwork 10.192.0.0/10
+AutomapHostsSuffixes .onion,.exit
+AutomapHostsOnResolve 1
+TransPort 9040
+TransListenAddress 192.168.42.1
+DNSPort 53
+DNSListenAddress 192.168.42.1
+
+
+sudo iptables -F
+sudo iptables -t nat -F
+
+sudo iptables -t nat -A PREROUTING -i wlan0 -p tcp --dport 22 -j REDIRECT --to-ports 22
+
+sudo iptables -t nat -A PREROUTING -i wlan0 -p udp --dport 53 -j REDIRECT --to-ports 53
+
+
+sudo iptables -t nat -A PREROUTING -i wlan0 -p tcp --syn -j REDIRECT --to-ports 9040
+
+sudo iptables -t nat -L
+
+
+sudo sh -c "iptables-save > /etc/iptables.ipv4.nat"
+
+
