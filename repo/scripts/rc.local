@@ -17,9 +17,9 @@ if [ "$_IP" ]; then
   printf "My IP address is %s\n" "$_IP"
 fi
 
-sh /home/pi/init.sh
+sh /home/pi/scripts/init.sh
 
-aria2c --conf-path=/home/pi/.aria2/aria2.conf
+#aria2c --conf-path=/home/pi/.aria2/aria2.conf
 
 exit 0
 
