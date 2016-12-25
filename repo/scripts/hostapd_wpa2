@@ -1,0 +1,1 @@
+interface=wlan0hw_mode=gieee80211n=1channel=1#macaddr_acl=1#ignore_broadcast_ssid=2wpa=2driver=nl80211#ssid=hellowifissid="h@ckm3 ifyouc@n"auth_algs=1wpa_psk_file=/etc/hostapd-pskwpa_key_mgmt=WPA-PSKwpa_pairwise=CCMP TKIPrsn_pairwise=CCMP
