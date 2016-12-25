@@ -1,5 +1,5 @@
 #!/bin/sh
 sudo bash
-echo DAEMON_CONF=\"/etc/hostapd/hostapdx.conf\" > /etc/default/hostapd
+cp hostapd_wpa2e /etc/hostapd/hostapd.conf
 
 sh ap_restart.sh
